@@ -3,19 +3,19 @@
 [ext_resource path="res://Images/birdWingUp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 11.0
 height = 14.0
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="playerCollider" type="CollisionShape2D" parent="."]
 position = Vector2( 147, 57 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="playerSprite" type="Sprite" parent="."]
 position = Vector2( 148, 60 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )

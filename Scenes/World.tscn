@@ -1,72 +1,78 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Images/pixelColor1.png" type="Texture" id=1]
 [ext_resource path="res://Images/pixelColor3.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1.51, 0.075 )
+extents = Vector2( 0.73875, 10.7938 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1.5, 0.06 )
 
 [node name="World" type="Node2D"]
 
-[node name="playfield" type="Node2D" parent="."]
+[node name="Playfield" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="playfield"]
+[node name="bgSprite" type="Sprite" parent="Playfield"]
 position = Vector2( 157.75, 116.25 )
 scale = Vector2( 316.5, 233.5 )
 texture = ExtResource( 2 )
 
-[node name="leftWall" type="StaticBody2D" parent="playfield"]
+[node name="leftWall" type="StaticBody2D" parent="Playfield"]
 scale = Vector2( 10, 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playfield/leftWall"]
-position = Vector2( 0.2, 12.1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/leftWall"]
+position = Vector2( 0.23875, 13.6 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="playfield/leftWall"]
+[node name="Sprite" type="Sprite" parent="Playfield/leftWall"]
 position = Vector2( 0.25, 11.95 )
 scale = Vector2( 1.5, 24.9 )
 texture = ExtResource( 1 )
 
-[node name="rightWall" type="StaticBody2D" parent="playfield"]
+[node name="rightWall" type="StaticBody2D" parent="Playfield"]
 position = Vector2( 315, 0 )
 scale = Vector2( 10, 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playfield/rightWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/rightWall"]
 position = Vector2( 0.2, 12.1 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="playfield/rightWall"]
+[node name="Sprite" type="Sprite" parent="Playfield/rightWall"]
 position = Vector2( 0.25, 11.95 )
 scale = Vector2( 1.5, 24.9 )
 texture = ExtResource( 1 )
 
-[node name="topWall" type="StaticBody2D" parent="playfield"]
+[node name="topWall" type="StaticBody2D" parent="Playfield"]
 position = Vector2( 315, 0 )
 scale = Vector2( 100, 100 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playfield/topWall"]
-position = Vector2( -1.49, 0.065 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="playfield/topWall"]
-position = Vector2( -2.36, 0.11 )
+[node name="Sprite" type="Sprite" parent="Playfield/topWall"]
+position = Vector2( -2.36, 0.08 )
 scale = Vector2( 3.2, 0.15 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.253125, -0.3 )
 
-[node name="bottomWall" type="StaticBody2D" parent="playfield"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/topWall"]
+position = Vector2( -1.54, 0.04 )
+shape = SubResource( 2 )
+
+[node name="bottomWall" type="StaticBody2D" parent="Playfield"]
 position = Vector2( 315, 228 )
 scale = Vector2( 100, 100 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playfield/bottomWall"]
-position = Vector2( -1.49, 0.065 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="playfield/bottomWall"]
+[node name="Sprite" type="Sprite" parent="Playfield/bottomWall"]
 position = Vector2( -2.36, 0.11 )
 scale = Vector2( 3.2, 0.15 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.253125, -0.3 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/bottomWall"]
+position = Vector2( -1.53, 0.06 )
+shape = SubResource( 2 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
+gravity = 0.7
+flap = 15.0
