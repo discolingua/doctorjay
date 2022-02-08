@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Images/birdWingUp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 11.0
-height = 14.0
+[sub_resource type="PhysicsMaterial" id=3]
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.5, 19.5 )
+
+[node name="Player" type="RigidBody2D"]
+mode = 2
+physics_material_override = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="playerCollider" type="CollisionShape2D" parent="."]
-position = Vector2( 147, 57 )
+position = Vector2( 146.5, 61.5 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="playerSprite" type="Sprite" parent="."]
 position = Vector2( 148, 60 )
