@@ -67,4 +67,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MessageText" type="RichTextLabel" parent="UI"]
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 39.0
+margin_top = 170.0
+margin_right = 257.0
+margin_bottom = 190.0
+custom_colors/default_color = Color( 0.0745098, 0.172549, 0.211765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Basket" to="." method="_on_Basket_body_entered"]
 [connection signal="body_entered" from="Penalty Zone" to="." method="_on_Penalty_Zone_body_entered"]
