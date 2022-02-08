@@ -12,7 +12,6 @@ extents = Vector2( 2.315, 0.81625 )
 [node name="Playfield" type="Node2D"]
 
 [node name="bgSprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 157.75, 116.25 )
 scale = Vector2( 316.5, 233.5 )
 texture = ExtResource( 2 )
