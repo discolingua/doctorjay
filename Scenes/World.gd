@@ -16,14 +16,20 @@ func _process(_delta):
 
 
 func _on_Penalty_Zone_body_entered(_this):
+	if _this.get_name() == "Ball":
+		WorldAudio.play("res://Sounds/bounce.wav")
 	if _this.get_name() == "Player":
+		WorldAudio.play("res://Sounds/buzz.wav")
 		penalty += 5.0
+
 		$UI/TimerText.bbcode_text = str(timer)
+
 
 func _on_Basket_body_entered(_this):
 	if _this.get_name() == "Ball":
 		if not basket:
 			basket = true
+			WorldAudio.play("res://Sounds/drjayocmp.mp3")
 			var _nowTime : float = OS.get_unix_time()
 			var _elapsed : float = _nowTime - startTime + penalty 
 			$UI/MessageText.bbcode_text = str("YOUR TIME WAS ", _elapsed)

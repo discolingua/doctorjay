@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drjayocmp.mp3-27768b1196da8fcb3c7c22b27bb4840f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/drjayocmp.mp3"
+dest_files=[ "res://.import/drjayocmp.mp3-27768b1196da8fcb3c7c22b27bb4840f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
